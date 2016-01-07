@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 })
 .get('/:category',function(req,res,next){
     var category = req.params.category;
-    Category.getCategoryByCategory(category,function(err,data){
+    Category.getCategory(category,function(err,data){
         if(err){
             console.log(err);
         }
