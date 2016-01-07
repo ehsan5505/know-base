@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
     
 })
 .get('/:id',function(req,res,next) {
-    console.log("NEXT");
+    // console.log("NEXT");
     var id = req.params.id;
     // res.send("ID : "+id);
     // console.log(id);
