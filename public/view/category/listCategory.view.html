@@ -1,0 +1,9 @@
+<h3 class="orange-text">List All The Categories </h3>
+
+<div class="categories row">
+    <div class="col s6" ng-repeat="category in categories">
+        <h3>{{category.title}}</h3>
+        <p>{{category.description}}</p>
+        <a href="#/categories/{{category.title}}" class="btn">View Article</a>
+    </div>
+</div>
