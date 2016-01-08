@@ -1,0 +1,17 @@
+<div class="article">
+    <h1>{{article.title}}</h1>
+    <h4 class="teal-text"><strong>{{article.category}}</strong></h4>
+    <small class="blue-text">Post on <span ng-bind="article.date"></span></small>
+    <hr/>
+    <p>{{article.body}}</p>
+    
+    <div class="row">
+        <div class="card right orange">
+            <div class="card-action center">
+                <a class="white-text" href="#">Edit</a> &nbsp;| &nbsp;&nbsp; 
+                <a class="white-text" href="#"> Delete</a>
+            </div>
+        </div>
+    </div>
+    
+</div>

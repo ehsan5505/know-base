@@ -17,4 +17,5 @@ categories.controller('detailCatCntr',['$scope','$http','$routeParams',function(
         $scope.articles = data;
         console.log(data);
     })
+    
 }])

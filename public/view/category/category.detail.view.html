@@ -4,6 +4,7 @@
 <h2 class="teal-text">Articles</h2>
 <div ng-repeat="article in articles">
     <h5 class="tail-text">{{article.title}}</h5>
-    <p>{{article.body}}</p>
-    <em class="blue-text">{{article.date}}</em>
+    <small>Post on <em class="blue-text">{{article.date}}</em></small>
+    <p>{{article.body | limitTo:200}}</p>
+    <a class="btn" href="#/articles/{{article._id}}">Read {{article.title}}</a>
 </div>
