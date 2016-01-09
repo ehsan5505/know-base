@@ -1,0 +1,36 @@
+<div class="row" ng-controller="addArtCntr">
+    
+    <form class="col s10" ng-submit="addArticle()">
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" placeholder="Article Title" ng-model="title" name="title" class="validate">
+          <label for="title">Article Title</label>
+        </div>
+      </div>
+      
+      <div class="row col m5 s12">
+        <label>Select Category</label>
+          <select class="browser-default" name="category" ng-model="category">
+            <option value="" disabled selected>Choose your Category</option>
+            <option ng-repeat="category in categories" value="{{category.title}}">{{category.title}}</option>
+          </select>
+      </div>
+      
+      <div class="row">
+          <div class="input-field col s12">
+              <textarea class="materialize-textarea" ng-model='body'></textarea>
+              <label for="body">Article Body</label>
+          </div>
+      </div>
+      
+      <div class="row right">
+          <input class="btn" type="submit" name="submit" value="+ Article">
+          <a href="#/articles" class="btn red">Cancel</a> 
+      </div>
+      
+      
+      </form>
+    
+    
+</div>

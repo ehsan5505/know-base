@@ -1,9 +1,19 @@
-<h3 class="orange-text">List All The Articles </h3>
-
-<div class="categories row">
-    <div class="col s6" ng-repeat="article in articles">
-        <h3>{{article.title}}</h3>
-        <p>{{article.body}}</p>
-        <a href="#/articles/{{article._id}}" class="btn">View Article</a>
-    </div>
+<div class="row ">
+<h3 class="orange-text col s10">List All The Articles </h3>
+    <a href="#/articles/add" class="blue btn col s2"> <i class="material-icons">library_add</i> Article</a>
 </div>
+
+  <div class="row">
+        <div class="col s12 m6"  ng-repeat="article in articles">
+          <div class="card grey lighten-1 z-depth-4">
+            <div class="card-content white-text">
+              <span class="card-title">{{article.title}}</span>
+              <p>{{article.body| limitTo:200}}</p>
+            </div>
+            <div class="card-action">
+              <a class="btn grey darken" href="#/articles/{{article._id}}"><i class="material-icons">library_books</i> {{article.title}}</a>
+              <!--<a href="#">This is a link</a>-->
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,38 @@
+<div class="row" ng-controller="editArtCntr">
+    
+    <form class="col s10" ng-submit="editArticle()">
+
+      <div class="row col s12">
+        <!--<div class="input-field col s12">-->
+          <p class="teal-text col s4" for="title">Article Title</p>
+        <!--</div>-->
+          <input class="col s8" type="text" placeholder="Article Title" ng-model="article.title" name="article.title" class="validate">
+      </div>
+      
+      <div class="row col s12">
+        <p class="col s4 teal-text">Select Category</p>
+          <select class="col s8 browser-default" name="article.category" ng-model="article.category">
+            <option value="" disabled selected>Choose your Category</option>
+            <option ng-repeat="category in categories" value="{{category.title}}">{{category.title}}</option>
+          </select>
+      </div>
+      
+      <div class="row col s12">
+              <p class="col s4 teal-text" for="body">Article Body</p>
+          <div class="col s8">
+              <textarea class="materialize-textarea" ng-model='article.body'></textarea>
+          </div>
+          <!--<div class="input-field col s12">-->
+          <!--</div>-->
+      </div>
+      
+      <div class="row right">
+          <input class="btn" type="submit" name="submit" value="Update Article">
+          <a href="#/articles" class="btn red">Cancel</a> 
+      </div>
+      
+      
+      </form>
+    
+    
+</div>

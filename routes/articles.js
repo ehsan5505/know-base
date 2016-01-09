@@ -36,6 +36,64 @@ router.get('/', function(req, res, next) {
     })
 })
 
+.post('/',function(req,res,next){
+    var title       = req.body.title;
+    var category    = req.body.category;
+    var body        = req.body.body;
+    
+    var newArticle  = new Article({
+        title       : title,
+        category    : category,
+        body        : body
+    }); 
+    
+    Article.createArticle(newArticle,function(err,data){
+        if(err){
+            console.error(err);
+        }
+        res.location('/articles');
+        res.redirect('/articles');
+    });
+    
+})
 
+.put('/:id',function(req,res,next){
+    var title       = req.body.title;
+    var category    = req.body.category;
+    var body        = req.body.body;
+    var id          = req.params.id;
+    
+    var data = {
+        title       : title,
+        category    : category,
+        body        : body
+    }
+    
+    // console.info(data);
+    var article = Article.findById(id);
+    // console.warn(article);
+    
+    article.title       = title;
+    article.category    = category;
+    article.body        = body;
+    
+    // console.error("ID >>>> "+id);
+    Article.updateArticle(id,article,function(err,data){
+        if(err){
+            console.error(err);
+        }
+        res.location('/articles');
+        res.redirect('/articles');
+    })
+    // console.error(article);
+    
+})
 
+.delete('/:id',function(req,res,next){
+    var id = req.params.id;
+    // console.log("REMOVE :"+req.body.id+"| "+req.params.id);
+    Article.delete(id,function(err,data){
+        console.error(err);
+    });
+})
 module.exports = router;

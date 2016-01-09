@@ -13,15 +13,31 @@ app.config(['$routeProvider',function($routeProvider){
         })
         
         //routes for the articles
+        // show all the articles
         .when('/articles',{
             templateUrl: 'view/article/listArticle.view.html',
             controller: 'listArtCntr'
         })
-        
+        //add the article
+        .when('/articles/add',{
+            templateUrl: 'view/article/addArticle.view.html',
+            controller: 'addArtCntr'
+        })
+        //edit the article
+        .when('/articles/edit/:id',{
+            templateUrl: 'view/article/editArticle.view.html',
+            controller: 'editArtCntr'
+        })
+        //remove the article
+        // .when('/articles/delete/:id',{
+        //     controller: 'removeArtCntr'
+        // })
+        // show detail article
         .when('/articles/:id',{
             templateUrl: 'view/article/detailArticle.view.html',
             controller: 'detailArtCntr'
         })
+        
         
         //default route
         .otherwise( directTo='/categories')

@@ -1,3 +1,4 @@
+<a href="#/articles" class="btn blue">Back</a>
 <div class="article">
     <h1>{{article.title}}</h1>
     <h4 class="teal-text"><strong>{{article.category}}</strong></h4>
@@ -8,8 +9,8 @@
     <div class="row">
         <div class="card right orange">
             <div class="card-action center">
-                <a class="white-text" href="#">Edit</a> &nbsp;| &nbsp;&nbsp; 
-                <a class="white-text" href="#"> Delete</a>
+                <a class="white-text" href="#articles/edit/{{article._id}}">Edit</a> &nbsp;| &nbsp;&nbsp; 
+                <a class="white-text" ng-href="#" onclick='return confirm("Are you sure?")' ng-click="removeArticle(article._id)"> Delete</a>
             </div>
         </div>
     </div>
