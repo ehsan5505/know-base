@@ -7,6 +7,10 @@ app.config(['$routeProvider',function($routeProvider){
             templateUrl: 'view/category/listCategory.view.html',
             controller: 'listCatCntr'
         })
+        .when('/categories/add',{
+            templateUrl: 'view/category/addCategory.view.html',
+            controller: 'addCatCntr'
+        })
         .when('/categories/:category',{
             templateUrl: 'view/category/category.detail.view.html',
             controller: 'detailCatCntr'
@@ -37,7 +41,6 @@ app.config(['$routeProvider',function($routeProvider){
             templateUrl: 'view/article/detailArticle.view.html',
             controller: 'detailArtCntr'
         })
-        
         
         //default route
         .otherwise( directTo='/categories')

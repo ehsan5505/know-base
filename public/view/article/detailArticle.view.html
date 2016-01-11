@@ -4,7 +4,7 @@
     <h4 class="teal-text"><strong>{{article.category}}</strong></h4>
     <small class="blue-text">Post on <span ng-bind="article.date"></span></small>
     <hr/>
-    <p>{{article.body}}</p>
+    <p ng-bind-html="article.body | newlines"></p>
     
     <div class="row">
         <div class="card right orange">

@@ -20,6 +20,29 @@ router.get('/', function(req, res, next) {
         }
         res.json(data);
     })
-});
+})
+
+.post('/',function(req,res,next){
+    // var title = req.body.title;
+    // console.dir(req.body);
+    var title = req.body.type;
+    var desc = req.body.description;
+    
+    var newCat = new Category({
+        title        : title,
+        description : desc
+    });
+    
+    Category.createCategory(newCat,function(err,data){
+        if(err){
+            console.error(err);
+        }
+        res.location('/categories');
+        res.redirect('/categories');
+    })
+    // console.warn("Type:"+title);
+    // console.warn("Category: "+desc);
+    
+})
 
 module.exports = router;

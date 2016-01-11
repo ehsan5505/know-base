@@ -29,3 +29,8 @@ module.exports.getCategory = function(category,callback){
     var query = {title: category }
     Category.find(query,callback);
 }
+
+module.exports.createCategory = function(newCategory,callback){
+    // console.dir(newCategory);
+    newCategory.save(callback);
+}

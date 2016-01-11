@@ -1,0 +1,36 @@
+<div class="row" ng-controller="addCatCntr">
+    
+    <form class="col s10" ng-submit="addCategory()">
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" placeholder="Category Title" ng-model="type" name="type" class="validate">
+          <label for="title">Category Title</label>
+        </div>
+      </div>
+      
+      <!--<div class="row col m5 s12">-->
+      <!--  <label>Select Category</label>-->
+      <!--    <select class="browser-default" name="category" ng-model="category">-->
+      <!--      <option value="" disabled selected>Choose your Category</option>-->
+      <!--      <option ng-repeat="category in categories" value="{{category.title}}">{{category.title}}</option>-->
+      <!--    </select>-->
+      <!--</div>-->
+      
+      <div class="row">
+          <div class="input-field col s12">
+              <textarea class="materialize-textarea" ng-model='description'></textarea>
+              <label for="description">Category Description</label>
+          </div>
+      </div>
+      
+      <div class="row right">
+          <input class="btn" type="submit" name="submit" value="+ Category">
+          <a href="#" class="btn red">Cancel</a> 
+      </div>
+      
+      
+      </form>
+    
+    
+</div>
